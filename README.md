@@ -6,29 +6,29 @@ This is a simple implementation of a Kanban board using the Flask microframework
 ## 1. Setting up Virtual Environment 
 
 To install, please first initialise a virtual environment. 
-
-<addr> python3.6 -m venv .venv
+```
+python3.6 -m venv .venv
  source .venv/bin/activate
  
-	</addr>
+```
+
 
 ## 2. Installing Requirements 
 
 Then, please install requirements in the attached file. 
 
-<addr> pip3 install -r requirements.txt </addr> 
+```pip3 install -r requirements.txt ```
 
 ## 3. Run app 
 
 You can now run the app using: 
 
-<addr> flask run </addr>
+```flask run ```
 
 or 
 
-<addr> python3 app.py </addr>
+```python3 app.py```
 
 ## 4. Local Host
 
 Your app should now be live on localhost:5000! 
-
