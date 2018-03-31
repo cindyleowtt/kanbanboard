@@ -3,18 +3,18 @@
 	<head> 
 		<div> 
 			<div align = "right">
-	    	<p> {{ username }}'s Kanban Board:</p> 
+	    	<p> {{ username }}'s kanban board:</p> 
 	    	<hr>
 	    	<p><a href="/">Home </a> | 
 	    	<a href="/login">Login</a> |
-	    	<a href="/register">Register</a> 
+	    	<a href="/register">Register</a> |
 	    	<a href="/logout">Logout</a>
 	    	</p></div>
 	    	<hr>
 		</div>
 		<meta charset="utf-8">
 		<title> 看板 </title> 
-		<style>      #board {
+		<style> #board {
         display: table;
         margin: 0;
         padding: 0;
@@ -101,42 +101,43 @@
         } </style>
 	</head>
 	<body> 
-	<h1> <center> {{ username }}'s Kan-ban 看板 </h1> 
+	<h1> <center> {{ username }}'s kanban 看板 </h1> 
 		<div id = "todo" class = "section"> 
 			<h3> To Do </h3>
-			<div class = "todocard"> Take a shit </div> 
-			<div class = "todocard"> Listen to Frank Ocean </div> 
-			<div class = "todocard"> Cry about life </div> 
-			<div class = "todocard"> Toucha Toucha Toucha Touch Me </div> 
-			<div class = "todocard"> Wow </div> 
-			<div class = "todocard"> What's up </div> 
+			{%- for i in todo %}
+			<div class = "todocard"> {{i.task}} </div> 
+			<form method = 'post' action= '/'>
+			<input type="checkbox" name="state" value="doing"> Doing <br>
+  			<input type="checkbox" name="state" value="done"> Done <br>
+			{%- endfor %}
 		</div>
-		<div id = "doing" class ="section">
+		<div id = "doing" class = "section"> 
 			<h3> Doing </h3>
-			<div class = "doingcard"> Call CRC Ventures </div> 
-			<div class = "doingcard"> Listen to Frank Ocean </div> 
-			<div class = "doingcard"> Cry about life </div> 
-			<div class = "doingcard"> Work Hard </div> 
-		</div> 
-		<div id = "done" class ="section">
+			{%- for i in doing %}
+			<div class = "doingcard"> {{i.task}} </div> 
+			{%- endfor %}
+		</div>
+		<div id = "done" class = "section"> 
 			<h3> Done </h3>
-			<div class = "donecard"> IDK anymore </div> 
-			<div class = "donecard"> Listen to Frank Ocean </div> 
-			<div class = "donecard"> Cry about life </div> 
+			{%- for i in done %}
+			<div class = "donecard"> {{i.task}} </div> 
+			{%- endfor %}
 		</div>
 	<br>
 	<h1><i> 
 	<div class="container">
 	Add a task </h1></i>
-	<form method = post action='/add'><p>
+	<form method = 'post' action='{{ url_for('add') }}'><p>
 		Which form: 
+
 		<input type="checkbox" name="state" value="todo"> To Do <br>
   		<input type="checkbox" name="state" value="doing"> Doing <br>
   		<input type="checkbox" name="state" value="done"> Done <br>
-		Task: <input type=“text” name =“task” value= "{{ request.form.task }}">
-		<input class="btn btn-default" type="submit" value="Submit">  <br>
+		Task: <input type="text" name ="task">
+		<input class="btn btn-default" type="submit" value="Add Task">  <br>
 	</p>
-	</form></div>
+	</form>
+	</div>
 	</center>
 	</body>
 </html> 

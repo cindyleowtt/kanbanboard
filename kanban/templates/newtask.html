@@ -1,0 +1,15 @@
+{% extends "home.html"%}
+{% block body %}
+
+	<h1><i> 
+	<div class="container">
+	Add a task </h1></i>
+	<form method = 'post' action='/add'><p>
+		Which form: 
+		<input type="checkbox" name="state" value="todo"> To Do <br>
+  		<input type="checkbox" name="state" value="doing"> Doing <br>
+  		<input type="checkbox" name="state" value="done"> Done <br>
+		Task: <input type="text" name ="task">
+		<input class="btn btn-default" type="submit" value="Add Task">  <br>
+	</p>
+	</form></div>
