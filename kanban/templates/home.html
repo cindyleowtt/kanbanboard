@@ -3,141 +3,171 @@
 	<head> 
 		<div> 
 			<div align = "right">
-	    	<p> {{ username }}'s kanban board:</p> 
-	    	<hr>
-	    	<p><a href="/">Home </a> | 
-	    	<a href="/login">Login</a> |
-	    	<a href="/register">Register</a> |
-	    	<a href="/logout">Logout</a>
-	    	</p></div>
-	    	<hr>
+			<p> {{ username }}'s kanban board:</p> 
+			<hr>
+			<p><a href="/">Home </a> | 
+			<a href="/login">Login</a> |
+			<a href="/register">Register</a> |
+			<a href="/logout">Logout</a>
+			</p></div>
+			<hr>
 		</div>
 		<meta charset="utf-8">
 		<title> 看板 </title> 
-		<style> #board {
-        display: table;
-        margin: 0;
-        padding: 0;
-        border-spacing: 10px;
-      }
+		<style> 
 
-      .section {
-        display: table-cell;
-        margin: 0;
-        border: 0px solid #666;
-        padding-left: 10px;
-        padding: 5px;
-        width: 600px;
-      }
-      h1 {
-        font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        font-size: 50px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 26.4px;
-        padding: 20px;
-        margin: 0;
-        border-bottom: 0px solid #999;
-      }
+		#board {
+		display: table;
+		margin: 0;
+		padding: 0;
+		border-spacing: 10px;
+	  }
 
-      h3 {
-              font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        font-size: 30px;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: 500;
-        padding-left: 15px;
-        line-height: 15.4px;
-      }
-      p {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: 400;
-        line-height: 20px;
-      }
-      .todocard {
-              display: inline-block;
-              vertical-align: top;
-              margin: 10px 5px;
-              padding: 10px;
-              width: 100px;
-              height: 100px;
-              color: black;
-              background: #76e7b7;
-              cursor: move;
-              text-align: center;
-              font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-              box-shadow: 2px 2px 2px #eee;
-           }
-      .doingcard {
-              display: inline-block;
-              vertical-align: top;
-              margin: 10px 5px;
-              padding: 10px;
-              width: 100px;
-              height: 100px;
-              color: black;
-              background: #b4d2d8;
-              cursor: move;
-              text-align: center;
-              font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-              box-shadow: 2px 2px 2px #eee;
-          }
-          .donecard {
-              display: inline-block;
-              vertical-align: top;
-              margin: 10px 5px;
-              padding: 10px;
-              width: 100px;
-              height: 100px;
-              color: black;
-              background: #82def2;
-              cursor: move;
-              text-align: center;
-              font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-              box-shadow: 2px 2px 2px #eee;
-        } </style>
+	  .section {
+		display: table-cell;
+		margin: 0;
+		border: 0px solid #666;
+		padding-left: 10px;
+		padding: 5px;
+		width: 600px;
+	  }
+	  h1 {
+		font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-size: 50px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 26.4px;
+		padding: 20px;
+		margin: 0;
+		border-bottom: 0px solid #999;
+	  }
+
+	  h3 {
+			  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-size: 30px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 500;
+		padding-left: 15px;
+		line-height: 15.4px;
+	  }
+	  p {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 12px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 400;
+		line-height: 20px;
+	  }
+	  .todocard {
+			  display: inline-block;
+			  vertical-align: top;
+			  margin: 10px 5px;
+			  padding: 10px;
+			  width: 130px;
+			  height: 130px;
+			  color: black;
+			  background: #E59866;
+			  cursor: move;
+			  text-align: center;
+			  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+			  box-shadow: 2px 2px 2px #eee;
+		   }
+	  .doingcard {
+			  display: inline-block;
+			  vertical-align: top;
+			  margin: 10px 5px;
+			  padding: 10px;
+			  width: 130px;
+			  height: 130px;
+			  color: black;
+			  background: #b4d2d8;
+			  cursor: move;
+			  text-align: center;
+			  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+			  box-shadow: 2px 2px 2px #eee;
+		  }
+	  .donecard {
+			  display: inline-block;
+			  vertical-align: top;
+			  margin: 10px 5px;
+			  padding: 10px;
+			  width: 130px;
+			  height: 130px;
+			  color: black;
+			  background: #82def2;
+			  cursor: move;
+			  text-align: center;
+			  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+			  box-shadow: 2px 2px 2px #eee;
+
+		} 
+		.addcard {
+			  display: inline-block;
+			  vertical-align: top;
+			  margin: 10px 5px;
+			  padding: 10px;
+			  width: 300px;
+			  height: 150px;
+			  color: black;
+			  background: #BFC9CA;
+			  cursor: move;
+			  text-align: center;
+			  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+			  box-shadow: 2px 2px 2px #eee;</style>
 	</head>
 	<body> 
 	<h1> <center> {{ username }}'s kanban 看板 </h1> 
 		<div id = "todo" class = "section"> 
 			<h3> To Do </h3>
 			{%- for i in todo %}
-			<div class = "todocard"> {{i.task}} </div> 
-			<form method = 'post' action= '/'>
-			<input type="checkbox" name="state" value="doing"> Doing <br>
-  			<input type="checkbox" name="state" value="done"> Done <br>
+			<div class = "todocard"> {{i.task}} 
+			<form method = 'post' action='{{ url_for('edit', id=i.id) }}'> 
+			<input type="checkbox" name="newstate" value="doing"> Doing <br>
+			<input type="checkbox" name="newstate" value="done"> Done <br>
+			<input type="checkbox" name="newstate" value="delete"> Delete <br> 
+			<input class="btn btn-default" type="submit"> <br></form>
+			</div>
 			{%- endfor %}
 		</div>
 		<div id = "doing" class = "section"> 
 			<h3> Doing </h3>
 			{%- for i in doing %}
-			<div class = "doingcard"> {{i.task}} </div> 
+			<div class = "doingcard"> {{i.task}}  
+			<p><form method = 'post' action='{{ url_for('edit', id=i.id) }}'>
+			<input type="checkbox" name="newstate" value="done"> Done <br>
+			<input type="checkbox" name="newstate" value="todo"> Todo <br>
+			<input type="checkbox" name="newstate" value="delete"> Delete <br>
+			<input class="btn btn-default" type="submit"> <br></p></div></form>
 			{%- endfor %}
 		</div>
 		<div id = "done" class = "section"> 
 			<h3> Done </h3>
 			{%- for i in done %}
-			<div class = "donecard"> {{i.task}} </div> 
+			<div class = "donecard"> {{i.task}} 
+			<p><form method = 'post' action='{{ url_for('edit', id=i.id) }}'>
+			<input type="checkbox" name="newstate" value="todo"> Todo <br>
+			<input type="checkbox" name="newstate" value="doing"> Doing <br>
+			<input type="checkbox" name="newstate" value="delete"> Delete <br>
+			<input class="btn btn-default" type="submit"> <br></p></div></form>
 			{%- endfor %}
 		</div>
 	<br>
+				<hr>
 	<h1><i> 
 	<div class="container">
 	Add a task </h1></i>
-	<form method = 'post' action='{{ url_for('add') }}'><p>
-		Which form: 
-
+	<div class = "addcard">
+	<form method = 'post' action='/add'>
 		<input type="checkbox" name="state" value="todo"> To Do <br>
-  		<input type="checkbox" name="state" value="doing"> Doing <br>
-  		<input type="checkbox" name="state" value="done"> Done <br>
+		<input type="checkbox" name="state" value="doing"> Doing <br>
+		<input type="checkbox" name="state" value="done"> Done <br>
 		Task: <input type="text" name ="task">
 		<input class="btn btn-default" type="submit" value="Add Task">  <br>
-	</p>
+	</div>
 	</form>
 	</div>
+	<hr>
 	</center>
 	</body>
 </html> 
