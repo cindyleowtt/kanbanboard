@@ -1,0 +1,142 @@
+<!DOCTYPE html> 
+<html lang=“en”> 
+	<head> 
+		<div> 
+			<div align = "right">
+	    	<p> {{ username }}'s Kanban Board:</p> 
+	    	<hr>
+	    	<p><a href="/">Home </a> | 
+	    	<a href="/login">Login</a> |
+	    	<a href="/register">Register</a> 
+	    	<a href="/logout">Logout</a>
+	    	</p></div>
+	    	<hr>
+		</div>
+		<meta charset="utf-8">
+		<title> 看板 </title> 
+		<style>      #board {
+        display: table;
+        margin: 0;
+        padding: 0;
+        border-spacing: 10px;
+      }
+
+      .section {
+        display: table-cell;
+        margin: 0;
+        border: 0px solid #666;
+        padding-left: 10px;
+        padding: 5px;
+        width: 600px;
+      }
+      h1 {
+        font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 26.4px;
+        padding: 20px;
+        margin: 0;
+        border-bottom: 0px solid #999;
+      }
+
+      h3 {
+              font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 500;
+        padding-left: 15px;
+        line-height: 15.4px;
+      }
+      p {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+        line-height: 20px;
+      }
+      .todocard {
+              display: inline-block;
+              vertical-align: top;
+              margin: 10px 5px;
+              padding: 10px;
+              width: 100px;
+              height: 100px;
+              color: black;
+              background: #76e7b7;
+              cursor: move;
+              text-align: center;
+              font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+              box-shadow: 2px 2px 2px #eee;
+           }
+      .doingcard {
+              display: inline-block;
+              vertical-align: top;
+              margin: 10px 5px;
+              padding: 10px;
+              width: 100px;
+              height: 100px;
+              color: black;
+              background: #b4d2d8;
+              cursor: move;
+              text-align: center;
+              font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+              box-shadow: 2px 2px 2px #eee;
+          }
+          .donecard {
+              display: inline-block;
+              vertical-align: top;
+              margin: 10px 5px;
+              padding: 10px;
+              width: 100px;
+              height: 100px;
+              color: black;
+              background: #82def2;
+              cursor: move;
+              text-align: center;
+              font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+              box-shadow: 2px 2px 2px #eee;
+        } </style>
+	</head>
+	<body> 
+	<h1> <center> {{ username }}'s Kan-ban 看板 </h1> 
+		<div id = "todo" class = "section"> 
+			<h3> To Do </h3>
+			<div class = "todocard"> Take a shit </div> 
+			<div class = "todocard"> Listen to Frank Ocean </div> 
+			<div class = "todocard"> Cry about life </div> 
+			<div class = "todocard"> Toucha Toucha Toucha Touch Me </div> 
+			<div class = "todocard"> Wow </div> 
+			<div class = "todocard"> What's up </div> 
+		</div>
+		<div id = "doing" class ="section">
+			<h3> Doing </h3>
+			<div class = "doingcard"> Call CRC Ventures </div> 
+			<div class = "doingcard"> Listen to Frank Ocean </div> 
+			<div class = "doingcard"> Cry about life </div> 
+			<div class = "doingcard"> Work Hard </div> 
+		</div> 
+		<div id = "done" class ="section">
+			<h3> Done </h3>
+			<div class = "donecard"> IDK anymore </div> 
+			<div class = "donecard"> Listen to Frank Ocean </div> 
+			<div class = "donecard"> Cry about life </div> 
+		</div>
+	<br>
+	<h1><i> 
+	<div class="container">
+	Add a task </h1></i>
+	<form method = post action='/add'><p>
+		Which form: 
+		<input type="checkbox" name="state" value="todo"> To Do <br>
+  		<input type="checkbox" name="state" value="doing"> Doing <br>
+  		<input type="checkbox" name="state" value="done"> Done <br>
+		Task: <input type=“text” name =“task” value= "{{ request.form.task }}">
+		<input class="btn btn-default" type="submit" value="Submit">  <br>
+	</p>
+	</form></div>
+	</center>
+	</body>
+</html> 

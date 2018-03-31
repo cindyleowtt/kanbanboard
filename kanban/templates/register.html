@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <div> 
+      <div align = "right">
+        <p> {{ username }}'s Kanban Board:</p> 
+        <hr>
+        <p><a href="/">Home </a> | 
+        <a href="/login">Login</a> |
+        <a href="/register">Register</a> 
+        <a href="/logout">Logout</a>
+        </p></div>
+        <hr>
+    </div>
+    <meta charset="utf-8">
+    <title> 看板 </title> 
+    <style>
+    h1 {
+        font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 26.4px;
+        padding: 20px;
+        margin: 0;
+        border-bottom: 0px solid #999;
+      }
+
+      h3 {
+              font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 500;
+        padding-left: 15px;
+        line-height: 15.4px;
+      }
+      p {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+        line-height: 20px;
+      }  
+    </style>
+    </head>
+  <body>
+    <h1>Kanban - Register<h1>
+    <div class="container">
+      <h1>Please Register Here</h1>
+      <br><p>
+      <form method = post action="/register">
+        <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username }}">
+         <input type="password" placeholder="Password" name="password" value="{{
+          request.form.password }}">
+        <input class="btn btn-default" type="submit" value="Register">
+      </form></p>
+    </div>
+  </body>
