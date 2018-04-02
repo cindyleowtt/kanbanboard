@@ -4,7 +4,7 @@ import hashlib
 
 app = Flask(__name__)
 app.config.from_object(__name__) 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/cindyleow/kanban/kanban/database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///kanban.db' 
 app.config['SECRET_KEY'] = 'THISISREAL'
 app.config['USERNAME'] = 'admin'
 app.config['PASSWORD'] = 'pass'
